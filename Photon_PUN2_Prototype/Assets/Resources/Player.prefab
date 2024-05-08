@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 3065267500715208728}
   - component: {fileID: 8768719731101818849}
   - component: {fileID: 8727023255446593378}
+  - component: {fileID: -8779585609242515033}
   - component: {fileID: 4627977993347598790}
   - component: {fileID: 2028074774494325546}
+  - component: {fileID: -414292701088426477}
   - component: {fileID: 1159470135362185484}
   - component: {fileID: 6675944614410070916}
   - component: {fileID: 4051826780079375231}
@@ -113,6 +115,27 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &-8779585609242515033
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6589965013531250049}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.6
+  m_Center: {x: 0, y: -0.6, z: 0}
 --- !u!54 &4627977993347598790
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -147,13 +170,30 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6589965013531250049}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65b158f06e276574faed80d52dea4f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 4
   maxVelocityChange: 4
+  sprintSpeed: 8
+  jumpHeight: 5
+  airControl: 0.5
+--- !u!114 &-414292701088426477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6589965013531250049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f6aa8d0451ca8408809094963c38fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 2028074774494325546}
+  camera: {fileID: 6889682038304687411}
 --- !u!114 &1159470135362185484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,7 +269,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7136141959242488936
 Transform:
   m_ObjectHideFlags: 0
